@@ -1,7 +1,6 @@
 import {
   AbsoluteFill,
   OffthreadVideo,
-  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
@@ -65,7 +64,7 @@ export const SubtitleVideo: React.FC<Props> = ({ videoSrc, subtitles }) => {
 
   return (
     <AbsoluteFill>
-      <OffthreadVideo src={staticFile(videoSrc)} />
+      <OffthreadVideo src={videoSrc} />
       {activeSegment && <SubtitleText text={activeSegment.text} />}
     </AbsoluteFill>
   );

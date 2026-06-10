@@ -37,14 +37,15 @@ if errorlevel 1 (
 echo.
 echo [Step 2] 字幕データをコピー中...
 copy /y "%OUTDIR%\%BASENAME%_subtitles.json" "remotion-project\src\subtitles.json" > nul
-if not exist "remotion-project\public" mkdir "remotion-project\public"
-copy /y "%INPUT%" "remotion-project\public\input.mp4" > nul
+
+REM 動画パスをfile://URLに変換（バックスラッシュをスラッシュに）
+set VIDEO_URL=file:///%INPUT:\=/%
 
 echo.
 echo [Step 3] Remotionで動画をレンダリング中...
 set OUTPUT=%OUTDIR%\%BASENAME%_subtitled.mp4
 cd remotion-project
-npx remotion render SubtitleVideo "%OUTPUT%"
+npx remotion render SubtitleVideo "%OUTPUT%" --props="{\"videoSrc\":\"%VIDEO_URL%\"}"
 cd ..
 
 echo.
