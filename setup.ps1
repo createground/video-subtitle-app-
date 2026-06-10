@@ -1,4 +1,4 @@
-# 初回セットアップスクリプト (Windows PowerShell版)
+﻿# 初回セットアップスクリプト (Windows PowerShell版)
 # PowerShellを管理者として実行してください
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path

@@ -1,4 +1,4 @@
-# 字幕付き動画を生成するメインスクリプト (Windows PowerShell版)
+﻿# 字幕付き動画を生成するメインスクリプト (Windows PowerShell版)
 # Usage: .\render.ps1 <input_video.mp4>
 
 param(
